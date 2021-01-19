@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 
 class Form extends Component {
+    initialState = {
+      name: '',
+      job: '',
+    };
+    state = this.initialState; 
+
     handleChange = event => {
         const { name, value } = event.target
       
@@ -9,12 +15,6 @@ class Form extends Component {
         })
     }
 
-    initialState = {
-        name: '',
-        job: '',
-    };
-
-    state = this.initialState;
 
     submitForm = () => {
         this.props.handleSubmit(this.state)
@@ -22,7 +22,7 @@ class Form extends Component {
     }
 
     render() {
-        const { name, job } = this.state;
+        const { name, job} = this.state;
       
         return (
           <form>
